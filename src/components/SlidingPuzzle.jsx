@@ -216,6 +216,22 @@ const SlidingPuzzle = () => {
                                 ))}
                             </div>
 
+                            {/* Original Image Overlay (Hint) */}
+                            {showHint && (
+                                <div className="absolute inset-0 z-10 animate-in fade-in duration-200">
+                                    <img
+                                        src={imageSrc}
+                                        alt="Original"
+                                        className="w-full h-full object-cover rounded-2xl brightness-90"
+                                    />
+                                    <div className="absolute inset-0 flex items-center justify-center bg-black/20 backdrop-blur-[1px]">
+                                        <span className="text-white font-black text-2xl uppercase tracking-widest drop-shadow-lg">
+                                            Original View
+                                        </span>
+                                    </div>
+                                </div>
+                            )}
+
                             {/* Win Overlay */}
                             {isWon && (
                                 <div className="absolute inset-0 flex flex-col items-center justify-center bg-slate-900/80 backdrop-blur-sm animate-in fade-in zoom-in duration-300">
@@ -245,14 +261,13 @@ const SlidingPuzzle = () => {
                             </button>
 
                             <button
-                                onMouseEnter={() => setShowHint(true)}
-                                onMouseLeave={() => setShowHint(false)}
+                                onClick={() => setShowHint(!showHint)}
                                 className="group flex flex-col items-center gap-2"
                             >
-                                <div className="w-12 h-12 glass rounded-full flex items-center justify-center group-hover:bg-premium-500/20 group-hover:text-premium-400 transition-all">
+                                <div className={`w-12 h-12 glass rounded-full flex items-center justify-center transition-all ${showHint ? 'bg-premium-500 text-white' : 'group-hover:bg-premium-500/20 group-hover:text-premium-400'}`}>
                                     <Eye className="w-6 h-6" />
                                 </div>
-                                <span className="text-xs font-bold text-slate-500 uppercase tracking-widest">Hint</span>
+                                <span className="text-xs font-bold text-slate-500 uppercase tracking-widest">Original</span>
                             </button>
 
                             <button
@@ -308,17 +323,7 @@ const SlidingPuzzle = () => {
                             </div>
                         </div>
 
-                        {/* Hint Modal/Overlay */}
-                        {showHint && (
-                            <div className="glass p-4 rounded-3xl animate-in fade-in slide-in-from-top-4 duration-300">
-                                <h3 className="text-xs font-bold text-slate-400 mb-3 uppercase tracking-widest underline decoration-premium-500 underline-offset-4">Target Image</h3>
-                                <img
-                                    src={imageSrc}
-                                    alt="Hint"
-                                    className="w-full h-auto rounded-xl shadow-lg brightness-75 grayscale-[0.2]"
-                                />
-                            </div>
-                        )}
+
                     </div>
                 </div>
             </div>
