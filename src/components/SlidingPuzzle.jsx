@@ -275,8 +275,8 @@ const SlidingPuzzle = () => {
                     </div>
 
                     {/* Controls & Options */}
-                    <div className="space-y-6">
-                        <div className="glass p-6 rounded-3xl">
+                    <div className="space-y-4">
+                        <div className="glass p-4 rounded-3xl">
                             <h3 className="text-sm font-bold text-slate-400 mb-4 uppercase tracking-widest flex items-center gap-2">
                                 <Settings className="w-4 h-4" /> Difficulty
                             </h3>
@@ -296,16 +296,16 @@ const SlidingPuzzle = () => {
                             </div>
                         </div>
 
-                        <div className="glass p-6 rounded-3xl">
+                        <div className="glass p-4 rounded-3xl">
                             <h3 className="text-sm font-bold text-slate-400 mb-4 uppercase tracking-widest flex items-center gap-2">
                                 <Eye className="w-4 h-4" /> Original View
                             </h3>
                             <button
                                 onClick={() => setShowHint(!showHint)}
-                                className={`w-full border-2 border-dashed rounded-2xl p-6 text-center cursor-pointer transition-all ${showHint ? 'border-premium-500 bg-premium-500/10' : 'border-slate-700 hover:border-slate-500'}`}
+                                className={`w-full border-2 border-dashed rounded-2xl p-4 text-center cursor-pointer transition-all ${showHint ? 'border-premium-500 bg-premium-500/10' : 'border-slate-700 hover:border-slate-500'}`}
                             >
-                                <div className={`w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-3 transition-colors ${showHint ? 'bg-premium-500 text-white' : 'bg-slate-800 text-slate-400'}`}>
-                                    <Eye className="w-5 h-5" />
+                                <div className={`w-8 h-8 rounded-full flex items-center justify-center mx-auto mb-2 transition-colors ${showHint ? 'bg-premium-500 text-white' : 'bg-slate-800 text-slate-400'}`}>
+                                    <Eye className="w-4 h-4" />
                                 </div>
                                 <p className={`text-xs font-bold uppercase tracking-widest transition-colors ${showHint ? 'text-premium-400' : 'text-slate-400'}`}>
                                     {showHint ? "Click to Close" : "Click to View Original"}
@@ -313,18 +313,18 @@ const SlidingPuzzle = () => {
                             </button>
                         </div>
 
-                        <div className="glass p-6 rounded-3xl">
+                        <div className="glass p-4 rounded-3xl">
                             <h3 className="text-sm font-bold text-slate-400 mb-4 uppercase tracking-widest flex items-center gap-2">
                                 <Upload className="w-4 h-4" /> Custom Image
                             </h3>
                             <div
                                 {...getRootProps()}
-                                className={`border-2 border-dashed rounded-2xl p-6 text-center cursor-pointer transition-all ${isDragActive ? 'border-premium-400 bg-premium-500/10' : 'border-slate-700 hover:border-slate-500'
+                                className={`border-2 border-dashed rounded-2xl p-4 text-center cursor-pointer transition-all ${isDragActive ? 'border-premium-400 bg-premium-500/10' : 'border-slate-700 hover:border-slate-500'
                                     }`}
                             >
                                 <input {...getInputProps()} />
-                                <div className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-3">
-                                    <Upload className="w-5 h-5 text-slate-400" />
+                                <div className="w-8 h-8 bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-2">
+                                    <Upload className="w-4 h-4 text-slate-400" />
                                 </div>
                                 <p className="text-xs text-slate-400 font-medium">
                                     {isDragActive ? "Drop here" : "Drag & drop image or click"}
